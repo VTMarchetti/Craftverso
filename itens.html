@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki de Itens do Minecraft</title>
+  <style>
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f6a00;
+    padding: 8px 15px; 
+}
+.logo img {
+    height: 40px; 
+}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 14px; 
+    border: 2px solid #8e8e8e;
+    border-radius: 5px;
+    width: 180px;
+}
+
+.search-bar button {
+    background-color: #8e8e8e;
+    border: none;
+    padding: 8px; 
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-bar button:hover {
+    background-color: #6b6b6b;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.search-bar {
+    padding: 5px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item-description {
+    font-size: 1em;
+    color: #555;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.item-card:hover .item-description {
+    opacity: 1;
+}
+
+.item-image {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.item-description {
+    font-size: 1em;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    background-color: #2f6a00;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagens/19b742faef2774ae03a77a826437d885.jpg" alt="Logo Minecraft" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="#">Equipa</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar...">
+            <button id="search-btn" class="search-btn">🔍</button>
+        </div>
+    </header>
+        <section class="items-container">
+            <div class="item-card">
+                <img src="itens/R.png" class="item-image">
+                <h2 class="item-title">Picareta de Diamante</h2>
+                <p class="item-description">Uma ferramenta poderosa usada para minerar blocos rapidamente e coletar minérios valiosos.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/OIP.jpeg" alt="Espada de Ferro" class="item-image">
+                <h2 class="item-title">Espada de Ferro</h2>
+                <p class="item-description">Uma arma eficaz para lutar contra criaturas e jogadores.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/minecraft-axe.png" alt="Maçã Dourada" class="item-image">
+                <h2 class="item-title">Machado</h2>
+                <p class="item-description">Um item que podemos obter madeira mais rápido, é um dos itens mais básicos do minecraft</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/enxada.jpeg" alt="" class="item-image">
+                <h2 class="item-title">Enxada</h2>
+                <p class="item-description">Um item que podemos fazer plantações, a Enxada faz a terra ficar fertil para podermos plantar as sementes.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/totem.jpeg" alt="" class="item-image">
+                <h2 class="item-title">Totem da imortalidade</h2>
+                <p class="item-description">Um item muito raro encontrado matando o <a href="">invocador</a>, esse item serve para não te deixar morrer, quebrando após o uso.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/elytra.png" alt="" class="item-image">
+                <h2 class="item-title">elytra</h2>
+                <p class="item-description">Um item extremamente raro, usado para poder voar no sobrevivência</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/arco.png" alt="" class="item-image">
+                <h2 class="item-title">Arco</h2>
+                <p class="item-description">Uma arma muito útil, serve para atingir inimigos de longa distância.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/cavalo.jpeg" alt="" class="item-image">
+                <h2 class="item-title">Armadura de cavalo</h2>
+                <p class="item-description">Uma armadura para cavalo que serve para aumentar a defesa do cavalo.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/end.png" alt="" class="item-image">
+                <h2 class="item-title">Perola do fim</h2>
+                <p class="item-description">Um item obtido após matar o <a href="">enderman</a>.</p>
+            </div>
+            <div class="item-card">
+                <img src="itens/escudo.jpeg" alt="" class="item-image">
+                <h2 class="item-title">Escudo</h2>
+                <p class="item-description">Um item que serva para te proteger 100% do dano recebido.</p>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Craftverso. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-btn').addEventListener('click', function() {
+                var query = document.getElementById('search-input').value;
+                if (query) {
+                    window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                }
+            });
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    var query = document.getElementById('search-input').value;
+                    if (query) {
+                        window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftVerso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Estilo da Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2F6A00;
+            padding: 8px 15px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #8e8e8e;
+            border-radius: 5px;
+            width: 180px;
+        }
+
+        .search-bar button {
+            background-color: #8e8e8e;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6b6b6b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #00ff00;
+        }
+
+        /* Estilo do Header */
+        header {
+            background-image: url(imagens/Inicial.webp);
+            color: white;
+            padding: 400px 400px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Estilo da Seção de Boas-Vindas */
+        .welcome {
+            background-color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Estilo da Grade de Itens */
+        .container {
+            padding: 20px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .Forest {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Forest:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Forest h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Forest p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Forest a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Forest a:hover {
+            text-decoration: underline;
+        }
+
+        .Forest img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 215px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Forest {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Forest:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Forest:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Forest:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Forest:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Forest:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Jungle {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Jungle:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Jungle h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Jungle p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Jungle a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Jungle a:hover {
+            text-decoration: underline;
+        }
+
+        .Jungle img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 195px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Jungle {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Jungle:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Jungle:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Jungle:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Jungle:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Jungle:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Winter {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Winter:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Winter h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Winter p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Winter a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Winter a:hover {
+            text-decoration: underline;
+        }
+
+        .Winter img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 190px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Winter {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Winter:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Winter:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Winter:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Winter:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Winter:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Taiga {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Taiga:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Taiga h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Taiga p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Taiga a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Taiga a:hover {
+            text-decoration: underline;
+        }
+
+        .Taiga img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 180px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Taiga {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Taiga:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Taiga:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Taiga:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Taiga:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Taiga:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Sea {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Sea:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Sea h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Sea p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Sea a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Sea a:hover {
+            text-decoration: underline;
+        }
+
+        .Sea img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 215px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Sea {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Sea:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Sea:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Sea:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Sea:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Sea:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Cave {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Cave:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Cave h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Cave p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Cave a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Cave a:hover {
+            text-decoration: underline;
+        }
+
+        .Cave img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 190px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Cave {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Cave:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Cave:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Cave:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Cave:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Cave:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Cave:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .Nether {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Nether:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Nether h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Nether p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Nether a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Nether a:hover {
+            text-decoration: underline;
+        }
+
+        .Nether img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 190px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Nether {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Nether:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Nether:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Nether:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Nether:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Nether:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Nether:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .Nether:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+        .End {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .End:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .End h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .End p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .End a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .End a:hover {
+            text-decoration: underline;
+        }
+
+        .End img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 190px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .End {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .End:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .End:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .End:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .End:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .End:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+
+        .End:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+
+        .End:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+
+        .End:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+
+
+        .Hmm {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Hmm:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .Hmm h2 {
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #000000;
+        }
+
+        .Hmm p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .Hmm a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .Hmm a:hover {
+            text-decoration: underline;
+        }
+
+        .Hmm img {
+            position: center;
+            display: block;
+            margin: 10px auto;
+            height: 250px; /* Altura fixa de 50px */
+            width: auto; /* Mantém a proporção da imagem */
+            border-radius: 10px;
+        }
+        /* Animação de Carregamento */
+        .Hmm {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .Hmm:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .Hmm:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .Hmm:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .Hmm:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .Hmm:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .Hmm:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .Hmm:nth-child(7) {
+            animation-delay: 1.4s;
+        }
+
+        .Hmm:nth-child(8) {
+            animation-delay: 1.6s;
+        }
+
+        .Hmm:nth-child(9) {
+            animation-delay: 1.8s;
+        }
+
+        .Hmm {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.5px solid #333;
+        }
+
+        .Hmm:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+        /* Estilo do Footer */
+        footer {
+            background-color: #2f6a00;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            bottom: 0;
+            width: 99.3%;
+            opacity: 90%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Imagens/mine_logo_no_background.webp" alt="CraftVerso">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="equipa.html">Equipa</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button>Buscar</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Seção de Boas-Vindas -->
+    <section class="welcome">
+        <p>Descubra tudo sobre o mundo de Minecraft - BIOMAS!</p>
+    </section>
+
+    <!-- Grade de Itens -->
+    <div class="container">
+        <div class="Forest">
+            <h2>Biomas de Terra Firme</h2>
+            <img src="imagens/Floresta.webp" alt="">
+            <p>Esses biomas possuem terrenos sólidos e variam entre florestas, planícies e montanhas.</p>
+            <a href="BiomasTerraFirme.html">Ver mais</a>
+        </div>
+
+        <div class="Jungle">
+            <h2>Biomas de selva</h2>
+            <img src="Imagens/Jungle.webp" alt="Assados">
+            <p>Biomas com vegetação densa, árvores grandes e águas lamacentas.</p>
+            <a href="BiomasJungle.html">Ver mais</a>
+        </div>
+
+        <div class="Winter">
+            <h2>Biomas frios e nevados</h2>
+            <img src="Imagens/Winter.webp" alt="Frutas e Vegetais">
+            <p>Biomas com neve, gelo e criaturas adaptadas ao frio.</p>
+            <a href="BiomasInverno.html">Ver mais</a>
+        </div>
+
+        <div class="Taiga">
+            <h2>Biomas de taiga</h2>
+            <img src="Imagens/Taiga.webp" alt="Destaques do Jogo">
+            <p>Florestas frias com árvores coníferas.</p>
+            <a href="BiomasTaiga.html">Ver mais</a>
+        </div>
+
+        <div class="Sea">
+            <h2>Biomas aquáticos</h2>
+            <img src="Imagens/Sea.jpg" alt="Frutas e Vegetais">
+            <p>Biomas oceânicos e rios, cheios de vida marinha.</p>
+            <a href="BiomasAquaticos.html">Ver mais</a>
+        </div>
+
+        <div class="Cave">
+            <h2>Biomas de caverna</h2>
+            <img src="Imagens/Cavestone.jpg" alt="Frutas e Vegetais">
+            <p>Encontrados no subsolo, com formações especiais.</p>
+            <a href="BiomasCaverna.html">Ver mais</a>
+        </div>
+
+        <div class="Nether">
+            <h2>Biomas do nether</h2>
+            <img src="Imagens/Nether.webp" alt="Frutas e Vegetais">
+            <p>Biomas infernais com terrenos e criaturas perigosas.</p>
+            <a href="BiomasNether.html">Ver mais</a>
+        </div>
+
+        <div class="End">
+            <h2>Biomas do end</h2>
+            <img src="Imagens/TheEnd.webp" alt="Frutas e Vegetais">
+            <p>O fim do jogo, cheio de mistério e um boss poderoso</p>
+            <a href="BiomasTheEnd.html">Ver mais</a>
+        </div>
+
+        <div class="Hmm">
+            <h2>Lucky Block</h2>
+            <img src="Imagens/Lucky-Block.png" alt="Frutas e Vegetais">
+            <p>?Oque será que têm dentro?.</p>
+            <a href="https://www.youtube.com/watch?v=JCjNbNxZMFs">Ver mais</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CraftVerso. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

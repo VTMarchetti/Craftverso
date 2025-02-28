@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki de Itens do Minecraft</title>
+  <style>
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2f6a00;
+    padding: 8px 15px; 
+}
+.logo img {
+    height: 40px; 
+}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Diminui o espaço entre o input e o botão */
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 14px; /* Diminui o tamanho da fonte */
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 180px; /* Diminui a largura da barra de pesquisa */
+    text-align: left;
+    background-color: transparent;
+    color: white;
+}
+
+.search-bar button {
+    background-color: white;
+    border: none;
+    padding: 8px; /* Diminui o padding do botão */
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #d0d0d0;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00ff00;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.search-bar {
+    padding: 5px;
+    width: 220px;
+    border: none;
+    border-radius: 5px;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.item-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 0.5px solid #333;
+}
+
+.item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item-description {
+    font-size: 1em;
+    color: #555;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.item-card:hover .item-description {
+    opacity: 1;
+}
+
+.item-image {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.item-description {
+    font-size: 1em;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    background-color: #2f6a00;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+}
+</style>
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagens/19b742faef2774ae03a77a826437d885.jpg" alt="Logo Minecraft" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="#">Equipa</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar...">
+            <button id="search-btn" class="search-btn">🔍</button>
+        </div>
+    </header>
+        <section class="items-container">
+            <div class="item-card">
+                <img src="blocos/fornalhada.jpeg" class="item-image">
+                <h2 class="item-title">Forno</h2>
+                <p class="item-description">Um bloco usado para assar os seus itens.</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/table.jpeg" class="item-image">
+                <h2 class="item-title">Mesa de Trabalho</h2>
+                <p class="item-description">Item mais importante do jogo, servindo para criar todos os itens do jogo.</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/encantamentos.jpeg" class="item-image">
+                <h2 class="item-title">Mesa de Encantamentos</h2>
+                <p class="item-description">Serve para deixar os equipamentos do jogo mais fortes, dando efeitos nas armas e mais defesas nas armaduras</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/soporte_de_pocoes.jpeg" class="item-image">
+                <h2 class="item-title">Suporte de poçoes</h2>
+                <p class="item-description">Serve para criar as poções.</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/bigorna.jpeg" class="item-image">
+                <h2 class="item-title">Bigorna</h2>
+                <p class="item-description">Serve para reperar os equipamentos e encantar equipamentos usando livros encantados.</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/mesa_de_ferraria.jpeg" class="item-image">
+                <h2 class="item-title">Mesa de ferraria</h2>
+                <p class="item-description">Serve para deixar os equipamentos de diamante em netherite.</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/suporte.jpeg" class="item-image">
+                <h2 class="item-title">Suporte de armadura</h2>
+                <p class="item-description">Serve para exibir as armaduras</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/forno.jpeg" class="item-image">
+                <h2 class="item-title">alto-forno</h2>
+                <p class="item-description">Ferve os minérios mais rápido doque a fornalha(so queima minérios).</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/Smoker.webp" class="item-image">
+                <h2 class="item-title">Fumador</h2>
+                <p class="item-description">Assa as <a href="">comidas</a>Mais rápido doque a fornalha(so queima comida)</p>
+            </div>
+            <div class="item-card">
+                <img src="blocos/compostador.jpeg" class="item-image">
+                <h2 class="item-title">Compostador</h2>
+                <p class="item-description">Serve para armazenar sementes e transformar em Farinha de osso</p>
+            </div>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Craftverso. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-btn').addEventListener('click', function() {
+                var query = document.getElementById('search-input').value;
+                if (query) {
+                    window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                }
+            });
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    var query = document.getElementById('search-input').value;
+                    if (query) {
+                        window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

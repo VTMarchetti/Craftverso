@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobs</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" type="image/jpg" href="/imagens/CraftVerso Logo.png"/>
+        <style>
+            /* inicio da navbar*/
+            .navbar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              background-color: #2f6a00;
+              padding: 8px 15px; 
+          }
+          .logo img {
+              height: 40px; 
+          }
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, sans-serif;
+              background-color: #f3f4f6;
+              color: #333;
+          }
+          
+          .search-bar {
+              display: flex;
+              align-items: center;
+              gap: 5px; 
+          }
+          
+          .search-bar input {
+              padding: 8px;
+              font-size: 14px; 
+              border: 2px solid #8e8e8e;
+              border-radius: 5px;
+              width: 180px;
+          }
+          
+          .search-bar button {
+              background-color: #8e8e8e;
+              border: none;
+              padding: 8px; 
+              cursor: pointer;
+              border-radius: 5px;
+          }
+          
+          .search-bar button:hover {
+              background-color: #6b6b6b;
+          }
+          nav ul {
+              display: flex;
+              list-style-type: none;
+          }
+          
+          nav ul li {
+              margin-right: 15px;
+          }
+          
+          nav ul li a {
+              text-decoration: none;
+              color: white;
+              font-size: 16px;
+          }
+          
+          nav ul li a:hover {
+              color: #00ff00;
+          }
+          
+          .header {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 10px 20px;
+              background-color: #4CAF50;
+              color: white;
+          }
+          
+          .logo {
+              height: 50px;
+          }
+          /*fim da navbar*/
+          h1 {
+              font-size: 2em;
+              margin: 0;
+          }
+          
+          .search-bar {
+              padding: 5px;
+              width: 200px;
+              border: none;
+              border-radius: 5px;
+          }
+          
+          .items-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .item-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .item-image {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .item-title {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .btn-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .item-card:hover .btn-overlay {
+            opacity: 1;
+        }
+
+        .btn-overlay button {
+            background-color: #008000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-overlay button:hover {
+            background-color: #008000;
+        }
+          
+          .item-card:hover .item-description {
+              opacity: 1;
+          }
+          
+          .item-image {
+              max-width: 100%;
+              height: 150px;
+              object-fit: cover;
+              border-radius: 8px;
+          }
+          
+          .item-title {
+              font-size: 1.5em;
+              margin: 10px 0;
+              color: #333;
+          }
+          
+          .item-description {
+              font-size: 1em;
+              color: #555;
+          }
+          
+          footer {
+              text-align: center;
+              background-color: #2f6a00;
+              color: white;
+              padding: 20px;
+              position: relative;
+              bottom: 0;
+              width: 100%;
+          }
+          
+          footer p {
+              font-size: 14px;
+          }
+          </style>
+</head>
+<header class="navbar">
+    <div class="logo">
+        <img src="imagens/19b742faef2774ae03a77a826437d885.jpg" alt="Logo Minecraft" class="logo-img">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="categorias.html">Categorias</a></li>
+            <li><a href="equipa.html">Equipa</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Pesquisar...">
+        <button class="search-btn" id="search-btn">🔍</button>
+    </div>
+</header>
+<body>
+    <section class="items-container">
+        <div class="item-card">
+            <a href="https://www.instagram.com/joaopeccanha/" target="_blank" class="view-button"><img src="Desenvolvedores/3D1A4264-BEA8-482F-9635-2CF5E3B14138_1_105_c.jpeg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">joao Peçanha</h2>
+           
+        </div>
+        
+        <div class="item-card">
+            <a href="https://www.instagram.com/_.candidooo._/" target="_blank" class="view-button"><img src="Desenvolvedores/Imagem_WhatsApp_2025-01-08_as_15.12.56_8833cb2f.jpg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Ricardo Cândido</h2>
+           
+        </div>
+
+        <div class="item-card">
+            <a href="https://www.instagram.com/makaron__64/" target="_blank" class="view-button"><img src="Desenvolvedores/Juan_fotos.jpg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Juan Carlos</h2>
+           
+        </div>
+
+        <div class="item-card">
+            <a href="https://www.instagram.com/vt_normal/" target="_blank" class="view-button"><img src="Desenvolvedores/Davi.jpg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Davi Marchetti</h2>
+           
+        </div>
+
+        <div class="item-card">
+            <a href="https://www.instagram.com/dan_guil/" target="_blank" class="view-button"><img src="Desenvolvedores/Daniel_2.jpg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Daniel Araújo</h2>
+           
+        </div>
+
+        <div class="item-card">
+            <a href="https://www.instagram.com/paengnerdola/" target="_blank" class="view-button"><img src="Desenvolvedores/20230905_170711.png" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Rebeca Coelho</h2>
+           
+        </div>
+
+        <div class="item-card">
+            <a href="https://www.instagram.com/equipa4dz/" target="_blank" class="view-button"><img src="Desenvolvedores/yo.jpeg" alt="Picareta de Diamante" class="item-image"></a>
+            <h2 class="item-title">Engenhocas</h2>
+           
+        </div>
+     
+    </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Craftverso. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-btn').addEventListener('click', function() {
+                var query = document.getElementById('search-input').value;
+                if (query) {
+                    window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                }
+            });
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    var query = document.getElementById('search-input').value;
+                    if (query) {
+                        window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

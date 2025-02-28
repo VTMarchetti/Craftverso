@@ -1,0 +1,14 @@
+{
+  "name": "craftverso",
+  "version": "1.0.0",
+  "description": "Projeto CraftVerso",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

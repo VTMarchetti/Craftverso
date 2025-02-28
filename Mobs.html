@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2f6a00;
+            padding: 8px 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2f6a00;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .logo img {
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #8e8e8e;
+            border-radius: 5px;
+            width: 180px;
+        }
+
+        .search-bar button {
+            background-color: #8e8e8e;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6b6b6b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ff00;
+        }
+
+        .txt1 {
+            color: rgb(255, 255, 255);
+            font-size: 36px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-shadow: #000000 5px 6px 5px;
+        }
+
+        .txt2 {
+            color: #333;
+            font-size: 34px;
+            text-align: center;
+            margin: 40px 0;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .nav-images {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .nav-image {
+            width: 120px;
+            height: 140px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-image:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding-top: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000; 
+        }
+
+        .image-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .description {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            z-index: 1000;
+        }
+
+        .image-container:hover .description {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .banner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url(https://static.vecteezy.com/ti/vetor-gratis/p1/23518232-pixel-jogos-fundo-quadra-grama-terra-padronizar-vetor.jpg);
+            background-size: 360px;
+            padding: 80px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="mine_logo_no_background.png" alt="Logo Minecraft">
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="Mobs.html">Mobs</a></li>
+            <li><a href="itens.html">Itens</a></li>
+            <li><a href="#">Biomas</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button>
+                <img src="https://cdn-icons-png.flaticon.com/512/151/151773.png" alt="Buscar" style="width: 20px; height: 20px;">
+            </button>
+        </div>
+    </nav>
+    
+    <header>
+        <div class="banner">
+            <h1 class="txt1">Mobs de Minecraft</h1>
+        </div>    
+        <p class="txt2">Mobs Dóceis</p>
+        <div class="nav-images">
+
+            <div class="image-container">
+                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5e/Cow_JE5_BE2.png/revision/latest?cb=20240729214026" alt="Vaca" class="nav-image">
+                <div class="tooltip">Vaca</div>
+                <div class="description">Fornece couro e carne. Pode ser ordenhada para obter leite.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/Pig_%28Dungeons%29.png?ff787" alt="Porco" class="nav-image">
+                <div class="tooltip">Porco</div>
+                <div class="description">Fornece carne de porco. Pode ser montado com uma sela.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/Chicken_JE2_BE2.png?30245" alt="Galinha" class="nav-image">
+                <div class="tooltip">Galinha</div>
+                <div class="description">Fornece penas, ovos e carne de frango. Bota ovos periodicamente.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/ff/White_Sheep_JE1.png/revision/latest?cb=20200124043548" alt="Ovelha" class="nav-image">
+                <div class="tooltip">Ovelha</div>
+                <div class="description">Fornece lã, que pode ser tingida. Pode ser tosquiada sem matá-la.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/thumb/Brown_Rabbit_JE2_BE2.png/150px-Brown_Rabbit_JE2_BE2.png?bc661" alt="Coelho" class="nav-image">
+                <div class="tooltip">Coelho</div>
+                <div class="description">Fornece pele e patas de coelho, usadas em poções.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/thumb/White_Horse.png/150px-White_Horse.png?0cc9a" alt="Cavalo" class="nav-image">
+                <div class="tooltip">Cavalo</div>
+                <div class="description">Pode ser montado com uma sela e equipado com armadura.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/thumb/Donkey_JE5.png/640px-Donkey_JE5.png?9e2a1" alt="Burro" class="nav-image">
+                <div class="tooltip">Burro</div>
+                <div class="description">Pode ser montado e usado para carregar baús.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://minecraft.wiki/images/thumb/Mule_JE5.png/800px-Mule_JE5.png?3c1f0" alt="Mula" class="nav-image">
+                <div class="tooltip">Mula</div>
+                <div class="description">Híbrido de cavalo e burro, também pode carregar baús.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/15/Gray_Llama.png/revision/latest?cb=20190813075023" alt="Lhama" class="nav-image">
+                <div class="tooltip">Lhama</div>
+                <div class="description">Pode ser equipada com tapetes e usada para carregar itens.</div>
+            </div>
+
+            <div class="image-container">
+                <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/d8/Red_Cat.png/revision/latest?cb=20181102140654" alt="Gato" class="nav-image">
+                <div class="tooltip">Gato</div>
+                <div class="description">Pode ser domesticado com peixe cru e afasta creepers.</div>
+            </div>
+
+        </div>
+    </header>
+
+ <p class="txt2">Mobs Neutros</p>
+    <div class="nav-images">
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/liberproeliis/images/b/b1/Endermanpng.png/revision/latest?cb=20170414040840&path-prefix=pt-br" alt="Enderman" class="nav-image">
+            <div class="tooltip">Enderman</div>
+            <div class="description">Ataca se o jogador olhar diretamente nos olhos ou atacá-lo</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Polar_Bear_JE2_BE2.png?29c45" alt="Urso Polar" class="nav-image">
+            <div class="tooltip">Urso Polar</div>
+            <div class="description">Normalmente pacífico, mas ataca se o jogador chegar perto do filhote ou atacá-lo</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Zombified_Piglin_JE9.png/150px-Zombified_Piglin_JE9.png?b91da" alt="Zumbi Piglin" class="nav-image">
+            <div class="tooltip">Zumbi Piglin</div>
+            <div class="description">Versão zumbificada do Piglin, encontrada no Nether.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Goat_JE1_BE1.png/1200px-Goat_JE1_BE1.png?17d44" alt="Cabra" class="nav-image">
+            <div class="tooltip">Cabra</div>
+            <div class="description">Pode dar cabeçadas em jogadores e mobs aleatoriamente</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/48/Bee_with_nectar_%28angry%29_Revision_1.png/revision/latest?cb=20191107075645" alt="Abelha" class="nav-image">
+            <div class="tooltip">Abelha</div>
+            <div class="description">Fica agressiva se for atacada ou se sua colmeia for quebrada/coletada sem fogo</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/dc/Panda_JE1_BE1.png/revision/latest?cb=20240729214747" alt="Panda" class="nav-image">
+            <div class="tooltip">Panda</div>
+            <div class="description">Alguns tipos podem reagir de forma agressiva se atacados</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ea/Piglin_BE.png/revision/latest?cb=20200730232135" alt="Piglin" class="nav-image">
+            <div class="tooltip">Piglin</div>
+            <div class="description">São neutros enquanto o jogador estiver usando armadura de ouro; atacam se forem provocados</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a4/Allay_JE1_BE1.png/revision/latest?cb=20230325132356" alt="Allay" class="nav-image">
+            <div class="tooltip">Allay</div>
+            <div class="description">Não é exatamente hostil, mas pode reagir se for atacado</div>
+        </div>
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Begging_Tame_Wolf.png/300px-Begging_Tame_Wolf.png?b4e4f" alt="Lobo" class="nav-image">
+            <div class="tooltip">Lobo</div>
+            <div class="description">Pode ser domesticado com ossos e se torna um aliado que ataca inimigos.</div>
+        </div>
+    </div>
+
+    <p class="txt2">Mobs Hostis</p>
+    <div class="nav-images">
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Zombie_JE3_BE2.png" alt="Zumbi" class="nav-image">
+            <div class="tooltip">Zumbi</div>
+            <div class="description">Mob comum que queima durante o dia. Pode transformar aldeões em zumbis.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Drowned.png/150px-Drowned.png?2454e" alt="Zumbi Afogado" class="nav-image">
+            <div class="tooltip">Zumbi Afogado</div>
+            <div class="description">Zumbi que habita na água e ataca com tridentes.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Skeleton_JE4_BE2.png" alt="Esqueleto" class="nav-image">
+            <div class="tooltip">Esqueleto</div>
+            <div class="description">Atira flechas à distância. Queima durante o dia.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://upload.wikimedia.org/wikipedia/en/4/49/Creeper_%28Minecraft%29.png" alt="Creeper" class="nav-image">
+            <div class="tooltip">Creeper</div>
+            <div class="description">Explode quando próximo do jogador. Teme gatos.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Spider_JE4_BE3.png" alt="Aranha" class="nav-image">
+            <div class="tooltip">Aranha</div>
+            <div class="description">Escala paredes e é neutra durante o dia.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Witch.png/100px-Witch.png?aeb30" alt="Bruxa" class="nav-image">
+            <div class="tooltip">Bruxa</div>
+            <div class="description">Lança poções nocivas e se cura com poções.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/dd/Slime_JE3_BE2.png/revision/latest?cb=20191230025505" alt="Slime" class="nav-image">
+            <div class="tooltip">Slime</div>
+            <div class="description">Se divide em slimes menores quando derrotado.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b8/BlazeNoParticles.png/revision/latest/scale-to-width-down/250?cb=20190512021145" alt="Blaze" class="nav-image">
+            <div class="tooltip">Blaze</div>
+            <div class="description">Lança bolas de fogo e voa. Encontrado no Nether.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraftfanonsite/images/8/89/Ghast.png/revision/latest?cb=20120305123755" alt="Ghast" class="nav-image">
+            <div class="tooltip">Ghast</div>
+            <div class="description">Flutua e atira bolas de fogo explosivas no Nether.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Wither_Skeleton_JE3_BE2.png" alt="Esqueleto do Wither" class="nav-image">
+            <div class="tooltip">Esqueleto do Wither</div>
+            <div class="description">Causa efeito de Wither com espadas. Encontrado em fortalezas do Nether.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/ed/Magma_Cube.png/revision/latest?cb=20190805151823" alt="Magma Cube" class="nav-image">
+            <div class="tooltip">Magma Cube</div>
+            <div class="description">Versão do Nether do Slime. Causa dano de fogo.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://www.minecraft.net/content/dam/minecraftnet/archive/c87e0bc17fc2f6d9889c3b4f95122e4e-ImageOne.png" alt="Phantom" class="nav-image">
+            <div class="tooltip">Phantom</div>
+            <div class="description">Aparece se o jogador não dormir por vários dias. Ataca voando.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Vindicator_JE2_BE2.png" alt="Vindicador" class="nav-image">
+            <div class="tooltip">Vindicador</div>
+            <div class="description">Inimigo encontrado em mansões, ataca com machados.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Evoker_JE2_BE2.png" alt="Evocador" class="nav-image">
+            <div class="tooltip">Evocador</div>
+            <div class="description">Inimigo encontrado em mansões, invoca fadas e dentes afiados.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_br_gamepedia/images/8/87/Saqueador.png/revision/latest?cb=20190104003516" alt="Saqueador" class="nav-image">
+            <div class="tooltip">Saqueador</div>
+            <div class="description">Ataca com bestas e pode invadir aldeias.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Ravager_JE1.png/1200px-Ravager_JE1.png?55aae" alt="Devastador" class="nav-image">
+            <div class="tooltip">Devastador</div>
+            <div class="description">Mob grande e poderoso que aparece em invasões.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Guardian_%28Retracted%29.png/1200px-Guardian_%28Retracted%29.png?4b855" alt="Guardião" class="nav-image">
+            <div class="tooltip">Guardião</div>
+            <div class="description">Mob aquático que ataca com raios laser.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Elder_Guardian_%28Retracted%29.png/1200px-Elder_Guardian_%28Retracted%29.png?9c607" alt="Guardião Ancião" class="nav-image">
+            <div class="tooltip">Guardião Ancião</div>
+            <div class="description">Versão mais poderosa do Guardião, causa efeito de mineração fadiga.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.staticneo.com/w/minecraft/Shulker.png" alt="Shulker" class="nav-image">
+            <div class="tooltip">Shulker</div>
+            <div class="description">Mob que se esconde em conchas e ataca com projéteis.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/41/Hoglin_JE3.png/revision/latest?cb=20240729214720" alt="Hoglin" class="nav-image">
+            <div class="tooltip">Hoglin</div>
+            <div class="description">Mob hostil do Nether que ataca com investidas.</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5b/Piglin_Brute.png/revision/latest?cb=20230723003220" alt="Piglin Bruto" class="nav-image">
+            <div class="tooltip">Piglin Bruto</div>
+            <div class="description">Versão mais forte do Piglin, encontrada em bastiões.</div>
+        </div>
+
+    </div>
+    <p class="txt2">Bosses</p>
+    <div class="nav-images">
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Elder_Guardian_%28Retracted%29.png/1200px-Elder_Guardian_%28Retracted%29.png?9c607" alt="Guardião Ancião" class="nav-image">
+            <div class="tooltip">Guardião Ancião</div>
+            <div class="description">Versão mais poderosa do Guardião, causa efeito de mineração fadiga.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/thumb/Ravager_JE1.png/1200px-Ravager_JE1.png?55aae" alt="Devastador" class="nav-image">
+            <div class="tooltip">Devastador</div>
+            <div class="description">Mob grande e poderoso que aparece em invasões.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Warden_JE1_BE1.png" alt="Warden" class="nav-image">
+            <div class="tooltip">Warden</div>
+            <div class="description">Mob cego que detecta vibrações e causa dano extremo.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://minecraft.wiki/images/Wither_JE2_BE2.png" alt="Wither" class="nav-image">
+            <div class="tooltip">Wither</div>
+            <div class="description">Boss que pode ser invocado com caveiras de Wither. Causa efeito de Wither.</div>
+        </div>
+        <div class="image-container">
+            <img src="https://static.wikia.nocookie.net/dragons/images/f/fe/Enderdragonboss.png/revision/latest?cb=20170915064049" alt="Dragão do Ender" class="nav-image">
+            <div class="tooltip">Dragão do Ender</div>
+            <div class="description">Boss final do jogo, encontrado no End. Causa dano com fogo e explosões.</div>
+
+
+    <footer>
+        <p>© 2025 CraftVerso. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

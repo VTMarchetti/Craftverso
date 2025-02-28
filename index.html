@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftVerso</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="shortcut icon" type="image/jpg" href="/imagens/CraftVerso Logo.png"/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="imagens/19b742faef2774ae03a77a826437d885.jpg" alt="Logo Minecraft" class="logo-img">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="equipa.html">Equipa</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar...">
+            <button class="search-btn" id="search-btn">🔍</button>
+        </div>
+    </header>
+
+ <section class="hero">
+    <h1>Bem-vindo ao CraftVerso</h1>
+   
+   
+
+</section>
+
+
+<section class="content">
+    <div class="section">
+        <h2>Blocos</h2>
+        <p>Descubra todos os blocos do jogo, suas propriedades e como usá-los.</p>
+        <a href="blocos.html">Ver mais</a>
+    </div>
+    <div class="section">
+        <h2>Criaturas</h2>
+        <p>Conheça todas as criaturas que habitam o mundo de Minecraft, desde mobs comuns até os mais raros.</p>
+        <a href="Mobs.html">Ver mais</a>
+    </div>
+    <div class="section">
+        <h2>Itens</h2>
+        <p>Aprenda sobre os itens do jogo, suas utilidades e como craftá-los.</p>
+        <a href="itens.html">Ver mais</a>
+    </div>
+    <div class="section">
+        <h2>Sound Tracks</h2>
+        <iframe style="border-radius:30px" src="https://open.spotify.com/embed/playlist/06tCWiOWTnuTfoKwHB8Byl?utm_source=generator" width="60%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+</section>
+
+ <section class="carousel">
+    <h2>Destaques do Jogo</h2>
+    <div class="carousel-images">
+        <img src="imagens/minecraft1.jpeg" alt="Imagem de Minecraft 1">
+        <img src="imagens/minecraft2.webp" alt="Imagem de Minecraft 2">
+        <img src="imagens/OIP.jpeg" alt="Imagem de Minecraft 3">
+    </div>
+</section>
+
+
+<section class="tutorial">
+    <h2>Como Jogar Minecraft</h2>
+    <p>Se você é iniciante, confira nosso tutorial básico para começar sua aventura no mundo de Minecraft!</p>
+    <a href="https://www.youtube.com/watch?v=qGzVnVkRoa8&pp=ygUgdHV0b3JpYWwgZGUgY29tbyBqb2dhciBtaW5lY3JhZnQ%3D">Veja o Tutorial</a>
+</section>
+
+
+<section class="testimonials">
+    <h2>O que os Jogadores Dizem</h2>
+    <div class="testimonial">
+        <p>"Minecraft é um jogo incrível que permite criatividade sem limites!" - Juan Sant'Ana</p>
+    </div>
+    <div class="testimonial">
+        <p>"Eu nunca me canso de explorar o mundo de Minecraft. É sempre algo novo!" - Eduardo Frota</p>
+    </div>
+    <div class="testimonial">
+        <p>"Minecraft fez parte da minha infância!" - Picanha"</p>
+    </div>
+    <div class="testimonial">
+        <p>"sou gay e gosto de dar o cu" - Engenhocaas</p>
+    </div>
+</section>
+
+
+<footer>
+    <p>&copy; 2025 Craftverso. Todos os direitos reservados. Se copiar vai ser deportado.</p>
+</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('search-btn').addEventListener('click', function() {
+                var query = document.getElementById('search-input').value;
+                if (query) {
+                    window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                }
+            });
+            document.getElementById('search-input').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    var query = document.getElementById('search-input').value;
+                    if (query) {
+                        window.location.href = 'resultados.html?q=' + encodeURIComponent(query);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

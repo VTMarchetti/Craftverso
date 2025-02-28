@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftVerso - Comidas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Estilo da Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2F6A00;
+            padding: 8px 15px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #8e8e8e;
+            border-radius: 5px;
+            width: 180px;
+        }
+
+        .search-bar button {
+            background-color: #8e8e8e;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6b6b6b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #00ff00;
+        }
+
+        /* Estilo do Header */
+        header {
+            background-color: #00A400;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Estilo da Seção de Boas-Vindas */
+        .welcome {
+            background-color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Estilo da Tabela de Comidas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2f6a00;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        table img {
+            max-width: 50px;
+            height: auto;
+        }
+
+        /* Estilo do Footer */
+        footer {
+            background-color: #2f6a00;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Outra imagens/mine_logo_no_background.webp" alt="Logo CraftVerso">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="equipa.html">Equipa</a></li>
+                <li><a href="sobre_nós.html">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button>Buscar</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1>Bem-vindo ao CraftVerso</h1>
+    </header>
+
+    <!-- Seção de Boas-Vindas -->
+    <section class="welcome">
+        <p>Descubra tudo sobre o mundo de Minecraft - Comidas!</p>
+    </section>
+
+    <!-- Tabela de Comidas -->
+    <h1 style="text-align: center; margin-top: 20px;">Comidas | Vegetais/Frutas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Foto</th>
+                <th>Pontos de comida</th>
+                <th>Restaura</th>
+                <th>Saturação</th>
+                <th>Velocidade</th>
+                <th>Efeito(s)</th>
+                <th>Origem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Maçã</td>
+                <td><img src="Comidinhas/maça.webp" alt="Maçã"></td>
+                <td>4</td>
+                <td>24</td>
+                <td>6.4</td>
+                <td>0.6</td>
+                <td>Nada</td>
+                <td>Folhas de carvalho ou carvalho escuro destruídas/desaparecidas no altar e armazém do forte, ferreiro da aldeia e casa das planícies, iglu e baús bônus. Receba 4 por 1 esmeralda na troca de nível de aprendiz do aldeão fazendeiro.</td>
+            </tr>
+            <tr>
+                <td>Batata assada</td>
+                <td><img src="Comidinhas/Batataassa.webp" alt="Batata Assada"></td>
+                <td>5</td>
+                <td>6</td>
+                <td>11</td>
+                <td>1.2</td>
+                <td>Nada</td>
+                <td>Cozinhar uma batata em um forno, defumador ou fogueira. Gerador de tentativa nas Câmaras de Teste.</td>
+            </tr>
+            <tr>
+                <td>Beterraba</td>
+                <td><img src="Comidinhas/Beterraba.webp" alt="Beterraba"></td>
+                <td>1</td>
+                <td>1.2</td>
+                <td>2.2</td>
+                <td>1.2</td>
+                <td>Nada</td>
+                <td>Colher culturas de beterraba. Aldeão fazendeiro que solta beterraba após colher a cultura de beterraba.</td>
+            </tr>
+            <tr>
+                <td>Sopa de Beterraba</td>
+                <td><img src="Comidinhas/Beterrabasoup.png" alt="Sopa de Beterraba"></td>
+                <td>6</td>
+                <td>7.2</td>
+                <td>13.2</td>
+                <td>1.2</td>
+                <td>Nada</td>
+                <td>Pode ser criado com uma tigela junto com beterrabas. Baú da casa da aldeia na tundra nevada.</td>
+            </tr>
+            <tr>
+                <td>Pão</td>
+                <td><img src="Comidinhas/Pao.webp" alt="Pão"></td>
+                <td>5</td>
+                <td>6</td>
+                <td>11</td>
+                <td>1.2</td>
+                <td>Nada</td>
+                <td>Pode ser feito com trigo. Sala de monstros, altar e armazém do forte, aldeia, mina, mansão na floresta e baús bônus. Receba 6 por 1 esmeralda na troca de nível iniciante do aldeão fazendeiro. Aldeão fazendeiro que solta pão após colher trigo. Presente de saque do aldeão fazendeiro. Somente na edição Java.</td>
+            </tr>
+            <tr>
+                <td>Maçã dourada</td>
+                <td><img src="Comidinhas/Golden_Apple_JE2_BE2.webp" alt="Maçã Dourada"></td>
+                <td>4</td>
+                <td>9.6</td>
+                <td>13.6</td>
+                <td>2.4</td>
+                <td>Regeneração II por 5 segundos<br>Absorção por 2 minutos</td>
+                <td>Pode ser criado com uma maçã e lingotes de ouro. Baús da pirâmide do deserto, sala de monstros, mina, altar do forte, mansão na floresta, iglu e grandes ruínas oceânicas.</td>
+            </tr>
+            <tr>
+                <td>Bolo</td>
+                <td><img src="Comidinhas/Bolo2.webp" alt="Bolo"></td>
+                <td>14(2 x 7)</td>
+                <td>2.8</td>
+                <td>16.8</td>
+                <td>0.2</td>
+                <td>Nada</td>
+                <td>É feito com trigo, ovos, açúcar e leite. Receba 1 por 1 esmeralda na troca de nível especialista do aldeão fazendeiro. Baú do tesouro de ruínas. Somente na edição Bedrock.</td>
+            </tr>
+            <tr>
+                <td>Cenoura dourada</td>
+                <td><img src="Comidinhas/Cenorragold.webp" alt="Cenoura Dourada"></td>
+                <td>6</td>
+                <td>14.4</td>
+                <td>20.4</td>
+                <td>2.4</td>
+                <td>Nada</td>
+                <td>É feito com uma cenoura e 8 pepitas de ouro. Receba 3 por 3 esmeraldas na troca de nível mestre do aldeão fazendeiro.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CraftVerso. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftVerso</title>
+    <style>
+        .title {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        .text {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            text-align: center;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Estilo da Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2F6A00;
+            padding: 8px 15px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .search-bar input {
+            padding: 8px;
+            font-size: 14px;
+            border: 2px solid #8e8e8e;
+            border-radius: 5px;
+            width: 180px;
+        }
+
+        .search-bar button {
+            background-color: #8e8e8e;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .search-bar button:hover {
+            background-color: #6b6b6b;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            flex: 1;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #00ff00;
+        }
+
+        /* Estilo do Header */
+        header {
+            background-image: url(Imagens/Winter.webp);
+            color: white;
+            padding: 360px 300px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Estilo da Seção de Boas-Vindas */
+        .welcome {
+            background-color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2f6a00;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            bottom: 0;
+            width: 99.3%;
+            opacity: 90%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="Imagens/mine_logo_no_background.webp" alt="CraftVerso">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="equipa.html">Equipa</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar...">
+            <button>Buscar</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+    </header>
+
+    <!-- Seção de Boas-Vindas -->
+    <section class="welcome">
+        <p>Descubra tudo sobre o mundo de Minecraft - BIOMAS!</p>
+    </section>
+    <section class="title">
+        <p><h1>❄️ Biomas Frios e Nevados ❄️</h1></p>
+    </section>
+    <section class="text">
+        <p><h3>1-Snowy Plains (Planícies Nevadas) – Planícies cobertas de neve.</h3></p>
+        <p><h3>2- Snowy Taiga (Taiga Nevada) – Floresta de pinheiros coberta de neve.</h3></p>
+        <p><h3>3- Ice Spikes (Picos de Gelo) – Formações de gelo azul pontiagudas.</h3></p>
+        <p><h3>4- Frozen Ocean (Oceano Congelado) – Água coberta de gelo.</h3></p>
+        <p><h3>5- Deep Frozen Ocean (Oceano Congelado Profundo) – Versão profunda do oceano congelado.</h3></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CraftVerso. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
